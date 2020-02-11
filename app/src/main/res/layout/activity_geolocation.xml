@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/geolocation_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GeolocationActivity">
+
+    <Button
+        android:id="@+id/back_to_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go Back To Menu"
+        app:layout_constraintTop_toTopOf="@+id/geolocation_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/back_to_menu">
+
+        <LinearLayout
+            android:id="@+id/get_userip"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ip_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IP:" />
+
+            <EditText
+                android:id="@+id/input_ip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Please input your ip/domainname"
+                android:inputType="text" />
+
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/enter_ip"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:background="#e0000000"
+            app:srcCompat="@drawable/im_thinking_enter" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
