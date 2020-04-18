@@ -165,6 +165,27 @@ public class IPUtil extends Activity {
         return IP_info_container;
     }
 
+    /**
+     * Check input IP or domain name is valid
+     *
+     *
+     * @param input
+     * @return
+     */
+    public static String valid_ping_input(String input){
+        if(input.equals("")){
+            return "invalid IP";
+        }
+        try {
+            InetAddress addr = InetAddress.getByName(input);
+            addr.getHostAddress();
+            addr.getHostName();
+        } catch (Exception e) {
+            input = "invalid IP";
+        }
+        Log.e("ping", input);
+        return input;
+    }
 
 
 }

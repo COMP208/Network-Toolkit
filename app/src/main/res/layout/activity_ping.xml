@@ -36,7 +36,7 @@
             <EditText
                 android:id="@+id/input_pingIP"
                 android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="3sp"
                 android:layout_marginRight="3sp"
                 android:layout_weight="1"
@@ -87,7 +87,7 @@
             <EditText
                 android:id="@+id/input_packageNum"
                 android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="3sp"
                 android:layout_marginRight="3sp"
                 android:layout_weight="1"
@@ -116,45 +116,44 @@
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="25dp"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/start_ping"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/button_background"
-                android:contentDescription="@null"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/enter" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="Start Ping !"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/start_ping"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/button_background"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/enter" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Start Ping !"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
                 android:layout_marginLeft="38dp"
+                android:layout_marginTop="130dp"
                 android:layout_marginRight="38dp"
+                android:layout_marginBottom="30dp"
                 android:fadingEdge="vertical"
                 android:scrollbars="vertical">
 
@@ -166,7 +165,7 @@
                     android:layout_marginRight="10dp"
                     android:isScrollContainer="true"
                     android:orientation="vertical"
-                    android:transcriptMode="alwaysScroll"/>
+                    android:transcriptMode="alwaysScroll" />
             </ScrollView>
 
             <LinearLayout
@@ -175,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="-6dp"
+                android:layout_marginTop="50dp"
                 android:orientation="horizontal">
 
                 <io.github.yuweiguocn.lib.squareloading.SquareLoading

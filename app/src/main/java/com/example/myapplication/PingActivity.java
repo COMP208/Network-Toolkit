@@ -90,25 +90,37 @@ public class PingActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        if (pingIP.getText().toString().trim().equals("")) {
+                        if (IPUtil.valid_ping_input(pingIP.getText().toString().trim()).equals("invalid IP")) {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    emptyIPDialog();
+                                    invalidIPDialog();
                                 }
                             });
 
                         } else {
-                            int package_number = 4;
-                            if (!pingPackage.getText().toString().trim().equals("")) {
-                                package_number = Integer.parseInt(pingPackage.getText().toString());
+                            String input_packet_number = pingPackage.getText().toString().trim();
+                            if(input_packet_number.startsWith("0") || input_packet_number.length() > 3){
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        invalidPacketNumberDialog();
+                                    }
+                                });
+                            }else{
+                                int package_number = 4;
+                                if(!input_packet_number.equals("")){
+                                    package_number = Integer.parseInt(pingPackage.getText().toString());
+                                }
+                                String res = ping(pingIP.getText().toString(), package_number);
                             }
-                            String res = ping(pingIP.getText().toString(), package_number);
                         }
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 loadingPing.setVisibility(View.INVISIBLE);
+                                pingIP.setVisibility(View.VISIBLE);
+                                pingPackage.setVisibility(View.VISIBLE);
                             }
                         });
                     }
@@ -163,14 +175,35 @@ public class PingActivity extends AppCompatActivity {
     /**
      * Directly print dialog to warn user to input valid ip
      */
-    private void emptyIPDialog() {
+    private void invalidIPDialog() {
         if (hasDialog) {
             return;
         } else {
             hasDialog = true;
             AlertDialog.Builder builder = new AlertDialog.Builder(PingActivity.this);
             builder.setTitle("oops!");
-            builder.setMessage("Please input an IP/domain name -_- !");
+            builder.setMessage("Please input a valid IP/domain name -_- !");
+            builder.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // User clicked OK button
+                    hasDialog = false;
+                }
+            });
+            builder.create().show();
+        }
+    }
+
+    /**
+     * Directly print dialog to warn user to input valid packet number
+     */
+    private void invalidPacketNumberDialog() {
+        if (hasDialog) {
+            return;
+        } else {
+            hasDialog = true;
+            AlertDialog.Builder builder = new AlertDialog.Builder(PingActivity.this);
+            builder.setTitle("oops!");
+            builder.setMessage("Please input a valid packet number!\n(The acceptable packet number is from 1 to 999)");
             builder.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     // User clicked OK button
