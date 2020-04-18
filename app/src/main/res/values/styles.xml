@@ -3,9 +3,41 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/backgroundBlack</item>
+        <!--        <item name="popupMenuStyle">@color/grayFrame</item>-->
+        <!--        <item name="colorAccent">@color/colorAccent</item>-->
+
+        <item name="colorPrimary">@color/grayFrame</item>
+        <item name="android:textColor">@color/coderGreen</item>
+        <item name="android:textColorPrimary">@color/darkCoderGreen</item>
+        <item name="android:textColorSecondary">@color/darkCoderGreen</item>
+        <item name="android:windowBackground">@color/backgroundBlack</item>
+        <item name="android:popupBackground">@color/grayFrame</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
     </style>
+
+
+    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">4dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:popupBackground">@color/menu</item>
+        <item name="android:textColorSecondary">@color/darkCoderGreen</item>
+        <!--        for test-->
+        <item name="android:color">@color/darkCoderGreen</item>
+        <item name="android:textColorPrimary">@color/darkCoderGreen</item>
+        <item name="android:textColor">@color/darkCoderGreen</item>
+        <item name="android:actionMenuTextColor">@color/darkCoderGreen</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 
 </resources>

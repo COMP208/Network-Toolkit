@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/lan_manager_actionBar">
+
+
+    <ImageButton
+        android:id="@+id/back_to_menu_from_lanmanager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/up_button"
+        android:layout_centerVertical="true"
+        android:background="@drawable/button_background" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="LAN Manager"
+        android:textColor="@color/coderGreen"
+        android:textSize="26sp"
+        android:layout_toRightOf="@+id/back_to_menu_from_lanmanager"
+        android:layout_marginLeft="20dp"/>
+
+    <ImageButton
+        android:id="@+id/refresh"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:layout_centerInParent="true"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/refresh"
+        android:layout_centerVertical="true"
+        android:background="#00000000"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"/>
+
+</RelativeLayout>

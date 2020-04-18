@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/topology_graph_myIp"
+        android:title="My IP"></item>
+
+    <item
+        android:id="@+id/reset_graph"
+        android:title="Reset"></item>
+
+</menu>

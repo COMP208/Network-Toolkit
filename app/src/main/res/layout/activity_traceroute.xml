@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/traceroute_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TraceRouteActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@+id/traceroute_layout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_text"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="18sp"
+                android:layout_height="18sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10sp"
+                android:layout_weight="1"
+                android:alpha="0.6"
+                app:srcCompat="@drawable/search" />
+
+            <EditText
+                android:id="@+id/input_ip_for_traceroute"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="3sp"
+                android:layout_marginRight="3sp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_text"
+                android:ems="10"
+                android:hint="IP/Domain Name"
+                android:inputType="text"
+                android:padding="6dp"
+                android:textColor="@color/darkCoderGreen"
+                android:textColorHint="@color/darkCoderGreen" />
+
+            <ImageButton
+                android:id="@+id/clear_traceroute_ip"
+                android:layout_width="18sp"
+                android:layout_height="18sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10sp"
+                android:layout_weight="1"
+                android:alpha="0.6"
+                android:background="#00000000"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/empty_text" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="40dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/enter_traceroute_ip"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/button_background"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/enter" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Enter"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/show_traceroute_map"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/button_background"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/map_location" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="Map"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:id="@+id/traceroute_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="38dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="38dp"
+                android:layout_marginBottom="30dp"
+                android:fadingEdge="vertical"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:id="@+id/traceroute_output_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:isScrollContainer="true"
+                    android:orientation="vertical"
+                    android:transcriptMode="alwaysScroll" />
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/loading_traceroute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <io.github.yuweiguocn.lib.squareloading.SquareLoading
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
+                    android:alpha="0.6"
+                    android:background="#00000000"
+                    app:dividerSize="2dp"
+                    app:squareColor="@color/darkCoderGreen"
+                    app:squareCorner="2dp"
+                    app:squareSize="6dp">
+
+                </io.github.yuweiguocn.lib.squareloading.SquareLoading>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:alpha="0.6"
+                    android:background="#00000000"
+                    android:gravity="center"
+                    android:text="Loading . . ."
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
