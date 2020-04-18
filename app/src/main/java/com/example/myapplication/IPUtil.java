@@ -131,6 +131,9 @@ public class IPUtil extends Activity {
      * @throws UnknownHostException
      */
     public static String IP_for_query(String input) throws UnknownHostException {
+        if(input.equals("")){
+            return "invalid IP";
+        }
         String IP = "";
         try {
             InetAddress addr = InetAddress.getByName(input);
