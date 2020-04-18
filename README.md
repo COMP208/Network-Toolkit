@@ -27,7 +27,7 @@ phone will automatically install)
 <br><br>
 All resource about this application is accessible on Github, user can download
 the newest update from the link below.
-* [Download here](https://github.com/ShenHuaShiGuanJun/Visual_IP_apk/blob/master/Visual_IP.apk)
+* [Download here](https://github.com/COMP208/Visual_IP_apk/blob/master/Network_Toolkit.apk)
 
 ## Quick start
 The action bar (as shown in Ping tool) of this toolkit includes three parts, which
