@@ -162,7 +162,7 @@ public class GeolocationActivity extends AppCompatActivity {
                                     @Override
                                     public void run() {
                                         loading.setVisibility(View.INVISIBLE);
-                                        outputInfo.setVisibility(View.VISIBLE);
+                                        outputInfo.setVisibility(View.INVISIBLE);
                                         invalidIPDialog();
                                     }
                                 });
