@@ -119,8 +119,6 @@ public class PingActivity extends AppCompatActivity {
                             @Override
                             public void run() {
                                 loadingPing.setVisibility(View.INVISIBLE);
-                                pingIP.setVisibility(View.VISIBLE);
-                                pingPackage.setVisibility(View.VISIBLE);
                             }
                         });
                     }
