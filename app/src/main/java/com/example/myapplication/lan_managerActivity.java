@@ -41,6 +41,7 @@ public class lan_managerActivity extends AppCompatActivity {
     private byte[] myIpBytes;
     private String myIP;
     private String myMAC;
+    private int lineNumber=0;
     public static ArrayList<DeviceInLAN> devices = new ArrayList();
     public static ArrayList<DeviceInLAN> registered_Devices;
     private boolean hasDialog = false;
@@ -106,7 +107,7 @@ public class lan_managerActivity extends AppCompatActivity {
                         }
 
                         try {
-                            Thread.sleep(5000);
+                            Thread.sleep(12000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -114,7 +115,7 @@ public class lan_managerActivity extends AppCompatActivity {
                         readArp();
 
                         try {
-                            Thread.sleep(7000);
+                            Thread.sleep(300*lineNumber);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -125,7 +126,7 @@ public class lan_managerActivity extends AppCompatActivity {
                             public void run() {
                                 loadingPing.setVisibility(View.INVISIBLE);
                                 refresh.setVisibility(View.VISIBLE);
-                                if (devices_output.getChildCount() <= 10) {
+                                if (lineNumber <= 10) {
                                     show_graph.setVisibility(View.VISIBLE);
                                 }
                             }
@@ -317,11 +318,13 @@ public class lan_managerActivity extends AppCompatActivity {
      * Read ARP table
      */
     private void readArp() {
+        lineNumber=0;
         try {
             BufferedReader br = new BufferedReader(new FileReader("/proc/net/arp"));
             String line;
 
             while ((line = br.readLine()) != null) {
+                lineNumber++;
                 try {
                     line = line.trim();
                     if (line.length() < 63) continue;
